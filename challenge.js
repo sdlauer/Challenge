@@ -3,30 +3,24 @@
  */
 
 function initialize(n, min, max) {
-//    var rn;
-//    var div = '';
-//    var div2 = 'factory' + factname();
-//    for (i = 1; i < n; i++) {
-//        rn = Math.random() * (max - min) + min;
-//        div += '<li><p> ' + rn.toFixed(0) + '</p></li>';
-//    }
-//    div += '</br>';
-    document.getElementById("root").innerHTML += ''+ 
-            '<object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html">no html</object>;';
+    var rn;
+    var div = '';
+    var div2 = 'factory' + factname();
+    for (i = 1; i < n; i++) {
+        rn = Math.random() * (max - min) + min;
+        div += '<li><p> ' + rn.toFixed(0) + '</p></li>';
+    }
+    div += '</br>';
+    document.getElementById("root").innerHTML += 
 
+            '<table><tr><th><li class="container"  id ="' + div2 + '" >&nbsp;' + div2 + '</th>' +
+            '<th id = "minmax" >' + min + '&nbsp; :&nbsp; ' + max + '</th>' +
+            '<ul>' +
+            div +
+            '</ul>' +
+            '</p></li></tr></table>'+
+    '<object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html">no html</object>';
 }
-
-//function namer() {
-//    '<textarea/>'+
-//            '<table><tr><th><li class="container"  id ="' + div2 + '" >&nbsp;' + div2 + '</th>' +
-//            '<th id = "minmax" >' + min + '&nbsp; :&nbsp; ' + max + '</th>' +
-//            '<ul>' +
-//            div +
-//            '</ul>' +
-//            '</p></li></tr></table>';
-//    document.getElementById("root").innerHTML +=
-//    '<object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html">no html</object>;';
-//}
 function generateFactory(n, min, max) {
     initialize(n, min, max);
 }

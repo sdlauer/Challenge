@@ -2,9 +2,9 @@
 /**
  *  Author     : Dr. Susan Lauer   sdlauer@gmail.com
  */
-$servername = "localhost";
-$username = "username";
-$password = "password";
+$servername = "ec2-52-91-189-113.compute-1.amazonaws.com";
+$username = "admin";
+$password = "IsPoLw0hp0SH5UWTen96";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);

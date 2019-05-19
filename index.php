@@ -8,18 +8,27 @@
     <head>
         <title>Full Stack Web Programming Challenge -- Lauer</title>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="main2.css">
+        <link type="text/css" rel="stylesheet" href="main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
     <!--"newFactory(5, -78910, 835910);-->
     <body id = "whatever">
+        <h1>A small example page to insert some data in to the MySQL database using PHP</h1>
+
+        <form action="phpFile.php" method="post">
+
+            Firstname: <input type="text" name="fname" /><br><br>
+
+            Lastname: <input type="text" name="lname" /><br><br>
+
+
+
+            <input type="submit" />
+
+        </form>  
         <div class="stripe-5"  onclick="newFactory(5, -78910, 835910);"><span >&nbsp;&nbsp;Root</span></div>
         <table id = "root" style="width:100%"></table>
-        <object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html"></object>
-        <object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html"></object>
-        <object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html"></object>
-        <object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html"></object>
 
         <!--     <fieldset  class = "chooser" id="factoryChoices"  style="display: show;font-size: 5px;" >
     <legend id="tiptop">&nbsp;&nbsp;Edit Factory: &nbsp;&nbsp;</legend>
