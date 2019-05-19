@@ -1,0 +1,271 @@
+
+/**
+ *  Author     : Dr. Susan Lauer   sdlauer@gmail.com
+ */
+body {font-family: cursive;
+      background-color: #f7f8f9}
+ul{
+    margin-left: 40px;
+    list-style:none;
+}
+
+ul, li {  margin: 0; padding: 0px;  position: relative;   
+          list-style: none;}
+ul {   width: 100px;
+}
+li { 
+    border: 3px dotted #2b0055;
+    border-width: 0 0 2px 2px;  
+    border-bottom-width: 2px;
+    text-align: right;
+    color: #2b0055;
+    font-size: 16px;
+    text-shadow: -1px 0 #3e9eff, 0 1px #3e9eff, 1px 0 #3e9eff, 0 -1px #3e9eff;
+
+}
+li.container { margin-left: 5em; 
+               
+               border: 3px dotted #3e9eff;
+               border-width: 2px 0  0  2px;  width: 200px;
+               text-align: left;
+               color: #3e9eff;
+font-weight: bolder;
+font-size: 24px;
+    text-shadow: 1px 0 #2b0055, 0 1px #2b0055, 1px 0 #2b0055, 0 1px #2b0055;
+}
+.nav {
+    display: inline-block;
+    horizontal-align: right; 
+float: right;
+    /* ie 7*/
+    
+}
+li.empty { font-style: italic;
+           color: silver;
+           border-color: silver;
+}
+li p { margin: 0;
+       background: transparent;
+       top: 0.5em; 
+       width: 100px;
+       text-align: right;
+}
+li ul { 
+    border-top: 2px #2b0055; 
+    margin-left: 5em;     
+
+}
+ul li:last-child ul {
+    border-left: 1px solid white;
+    margin-left: -20px;
+}
+hr { 
+    display: inline-block;
+    margin-top: 0.5em;
+    margin-bottom: .2em;
+    margin-left: 0em;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 20px;
+    border: 3px dotted #3e9eff;
+} 
+.vl {
+    display: inline-block;
+    border-left: 6px dotted #3e9eff;
+    height: 10px;}
+
+
+article {
+    /*    -webkit-column-count: 4;
+        -moz-column-count: 4;*/
+    column-count: 4;
+    /*    -webkit-column-width: 200px;
+        -moz-column-width: 200px;*/
+    column-width: 200px;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+h1 {word-wrap: normal;
+    width: 225px;
+    color: darkgreen;}
+cite {font-size:2em} 
+fieldset {border-radius: 8px;
+          border:#3e9eff solid 4px;
+
+          width: 200px;
+}
+
+legend { /* Text and background colour, blue on light gray */
+    color:white;
+    background-color:#2b0055;
+    /*eggplant*/
+    border-radius: 8px;
+    font-weight: bolder;
+    text-shadow: -.5px 0 #2b0055, 0 1px #2b0055, 2px 0 #2b0055, 0 -1px #2b0055;
+
+}
+legend[id = tiptop] {font-size:5em;
+                     color: white;
+                     background-color: #3e9eff;
+                     /*blue*/
+                     border-radius: 15px;} 
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #3e9eff;
+    border: none;
+    color: whitesmoke;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.radio-item {
+    display: inline-block;
+    position: relative;
+    padding: 0 6px;
+    margin: 10px 0 0;
+}
+
+.radio-item input[type='radio'] {
+    display: none;
+}
+
+.radio-item label {
+    color: #2b0055;
+    font-weight: normal;
+}
+
+.radio-item label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0 5px 0 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 11px;
+    border: 2px solid #2b0055;
+    background-color: transparent;
+}
+
+.radio-item input[type=radio]:checked + label:after {
+    border-radius: 11px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: " ";
+    display: block;
+    background: #3e9eff;
+}
+fieldset[id=ringer]{    border: 1px solid green;}  
+fieldset[id=height]{    border: 1px solid green;}  
+input[type='text'], input[type='number'] {
+    border:#3e9eff solid 4px;
+    border-radius: 4px;
+    width:280px;
+    resize: none;
+    word-wrap: normal;
+    /*-moz-border-radius: 15px;*/
+    border-radius: 15px;
+    padding:5px;
+    /*-moz-appearance: textfield;*/
+}
+input[type=legend] {
+    border: 2px #2b0055;
+    border-radius: 4px;
+    resize: none;
+}
+input[type=submit] {
+    background-color: #912E03;
+    border-radius: 15px;
+    font-size:1em;
+
+}
+input[type=submit]:hover {
+    background-color: lightgrey;
+    border-radius: 15px;
+    font-size:1em;
+    color: green;
+    text-align:  right;
+}
+p{text-align: center}
+.inline-block
+{
+    display: inline-block;
+}
+
+.twenty-five-perc
+{
+    width: 24%;
+}
+div {word-wrap: normal;
+     width: 100%;
+     position: relative;
+
+     color: white;
+     font-variant: small-caps;
+     font-size:3em;
+     /*    text-align: left */
+}
+
+.module {
+    background: #f7f8f9;
+
+    > div {
+        padding: 1rem;
+        margin: 0 0 0 0;
+
+    }
+
+}
+
+.stripe-5 {
+    color: #f7f8f9;
+    font-weight: bolder;
+    text-shadow: -1px 0 #2b0055, 0 1px #2b0055, 7px 0 #2b0055, 0 -1px #2b0055;
+
+    background: linear-gradient(
+        to bottom,
+        /*#5d9634,*/
+        #3e9eff,
+        #3e9eff 70%,
+        #2b0055 30%,
+        #2b0055
+        /*#538c2b*/
+        );
+    background-size: 100% 5px;
+} 
