@@ -11,7 +11,7 @@ function initialize(n, min, max) {
 //        div += '<li><p> ' + rn.toFixed(0) + '</p></li>';
 //    }
 //    div += '</br>';
-    document.getElementById("root").innerHTML +=
+    document.getElementById("root").innerHTML += ''+ 
             '<object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html">no html</object>;';
 
 }
