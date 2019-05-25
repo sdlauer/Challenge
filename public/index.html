@@ -14,18 +14,11 @@
     </head>
     <!--"newFactory(5, -78910, 835910);-->
     <body id = "whatever">
-        <h1>A small example page to insert some data in to the MySQL database using PHP</h1>
+        <h1>A small example page to get some data from the MySQL database using PHP</h1>
 
-        <form action="private/phpFile.php" method="post">
-
-            Firstname: <input type="text" name="fname" /><br><br>
-
-            Lastname: <input type="text" name="lname" /><br><br>
-
-
-
-            <input type="submit" />
-
+        <form name = "factoryInput" action="factoryMaker.php" method="GET">
+            Show factory of: <input type="number" name="id"  />
+            <input type="submit" value="GO" name ="<?php echo $str; ?> " />
         </form>  
         <div class="stripe-5"  onclick="newFactory(5, -78910, 835910);"><span >&nbsp;&nbsp;Root</span></div>
         <table id = "root" style="width:100%"></table>
@@ -126,11 +119,11 @@
     <div id="textContainer"></div>
     <button onclick="CreateText();">Create a text node!</button>
     <script src="challenge.js"></script>
-   <!-- <script>generateFactory(5,0,8);</script>--
-    <input type="submit" value = "PROJECT STAND--SUBMIT" /><br />
-</p>
-<input type="reset" onclick="mySetter()" value="Reset form">
-
+        <!-- <script>generateFactory(5,0,8);</script>--
+        <input type="submit" value = "PROJECT STAND--SUBMIT" /><br />
+    </p>
+    <input type="reset" onclick="mySetter()" value="Reset form">
+    
         <!-- </form> --
         <div id="textContainer"></div>
         <button onclick="CreateText();">Create a text node!</button>

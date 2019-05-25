@@ -38,6 +38,7 @@ function factname() {
     factname.c++;
     return factname.c;
 }
+
 //function updater(){
 //document.getElementById("root").innerHTML +=
 //        '<fieldset  class = "chooser" id="factoryChoices"  style="display: show;font-size: 5px;" >' +
@@ -69,3 +70,14 @@ function factname() {
 //        '</fieldset>';
 //      
 //        }
+        
+
+// keeps enter from submitting form
+function stopRKey(evt) {
+    var evt = (evt) ? evt : ((event) ? event : null);
+    var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+    if ((evt.keyCode === 13) && (node.type === "text")) {
+        return false;
+    }
+}
+document.onkeypress = stopRKey;
