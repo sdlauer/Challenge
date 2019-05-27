@@ -14,7 +14,7 @@
     </head>
     <!--"newFactory(5, -78910, 835910);-->
     <body id = "whatever">
-        <h1>A small example page to get some data from the MySQL database using PHP</h1>
+        <h1 id = "dynamic-link">A small example page to get some data from the MySQL database using PHP</h1>
 
         <form name = "factoryInput" action="factoryMaker.php" method="GET">
             Show factory of: <input type="number" name="id"  />
@@ -22,6 +22,23 @@
         </form>  
         <div class="stripe-5"  onclick="newFactory(5, -78910, 835910);"><span >&nbsp;&nbsp;Root</span></div>
         <table id = "root" style="width:100%"></table>
+        <div id="serverData">Here is where the server sent data will appear</div>
+<script type="text/javascript">
+//functions here
+        //check for browser support
+if(typeof(EventSource)!=="undefined") {
+	//create an object, passing it the name and location of the server side script
+	var eSource = new EventSource("send_sse.php");
+	//detect message receipt
+	eSource.onmessage = function(event) {
+		//write the received data to the page
+		document.getElementById("serverData").innerHTML = event.data;
+	};
+}
+else {
+	document.getElementById("serverData").innerHTML ="Whoops! Your browser doesn't receive server-sent events.";
+}
+</script>
 
         <!--     <fieldset  class = "chooser" id="factoryChoices"  style="display: show;font-size: 5px;" >
     <legend id="tiptop">&nbsp;&nbsp;Edit Factory: &nbsp;&nbsp;</legend>
@@ -54,7 +71,62 @@
    <input type="reset" onclick="mySetter()" value="Reset form">
   </fieldset>
         -->
+<script>
+      (function(){
 
+  // querySelector, jQuery style
+  var $ = function (selector) {
+    return document.querySelector(selector);
+  };
+
+  // Create function outside loop
+  function dynamicEvent() {
+    this.innerHTML = 'Dynamic event success.';
+    this.className += ' dynamic-success';
+  }
+
+  // Iterate over #links <li>
+  // Use querySelector to target #links and then get tag names <li>
+  var links = $('#links').getElementsByTagName('h1');
+
+  // For each <li> inside #links
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+
+    // <li> onclick, runAlert function
+    link.onclick = dynamicEvent;
+  }
+
+  // Onsubmit
+  $('.generate').onsubmit = function() {
+
+    // Grab the input value
+    var dynamicValue = $('.generate-input').value;
+
+    // If empty value
+    if(!dynamicValue) {
+
+      alert('Please enter something.');
+
+    } else {
+
+      // Change the submit value
+      $('.generate-submit').value = 'Click your item below!';
+
+      // Create the links with the input value as innerHTML
+      var h1 = document.createElement('h1');
+      h1.id = 'dynamic-link';
+      h1.innerHTML = dynamicValue;
+
+      // Append it and attach the event (via onclick)
+      $('#links').appendChild(h1);
+      h1.onclick = dynamicEvent;
+    }
+
+    // Prevent the form submitting
+    return false;
+  };
+})();  </script>
         <script src="challenge.js"></script>
 
         <!--

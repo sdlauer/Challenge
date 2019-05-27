@@ -13,13 +13,15 @@ function initialize(n, min, max) {
     div += '</br>';
     document.getElementById("root").innerHTML += 
 
-            '<table><tr><th><li class="container"  id ="' + div2 + '" >&nbsp;' + div2 + '</th>' +
+            '<table><tr><th><li class="containerFactory"  id ="' + div2 + '" >&nbsp;' + div2 + '</th>' +
             '<th id = "minmax" >' + min + '&nbsp; :&nbsp; ' + max + '</th>' +
             '<ul>' +
             div +
             '</ul>' +
             '</p></li></tr></table>'+
     '<object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html">no html</object>';
+    
+
 }
 function generateFactory(n, min, max) {
     initialize(n, min, max);
@@ -80,4 +82,62 @@ function stopRKey(evt) {
         return false;
     }
 }
+//  dynamic onclick for factories
+(function(){
+
+  // querySelector, jQuery style
+  var $ = function (selector) {
+    return document.querySelector(selector);
+  };
+
+  // Create function outside loop
+  function dynamicEvent() {
+    this.innerHTML = 'Dynamic event success.';
+    this.className += ' dynamic-success';
+  }
+
+  // Iterate over #links <li>
+  // Use querySelector to target #links and then get tag names <li>
+  var links = $('#links').getElementsByTagName('li');
+
+  // For each <li> inside #links
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+
+    // <li> onclick, runAlert function
+    link.onclick = dynamicEvent;
+  }
+
+  // Onsubmit
+  $('.generate').onsubmit = function() {
+
+    // Grab the input value
+    var dynamicValue = $('.generate-input').value;
+
+    // If empty value
+    if(!dynamicValue) {
+
+      alert('Please enter something.');
+
+    } else {
+
+      // Change the submit value
+      $('.generate-submit').value = 'Click your item below!';
+
+      // Create the links with the input value as innerHTML
+      var li = document.createElement('li');
+      li.className = 'containerFactory';
+      li.innerHTML = dynamicValue;
+
+      // Append it and attach the event (via onclick)
+      $('#links').appendChild(li);
+      li.onclick = dynamicEvent;
+    }
+
+    // Prevent the form submitting
+    return false;
+  };
+})();
+
+
 document.onkeypress = stopRKey;
