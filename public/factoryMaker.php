@@ -18,7 +18,7 @@
 //// Save the resulting HTML
 //    echo $doc->saveHTML();
 
-    $filename = 'tester.html';
+    $filename = 'tester.php';
     
 $handle = fopen($filename, 'a');
     @ require_once ("index.html");

@@ -84,5 +84,5 @@ function stopRKey(evt) {
     }
 }
 
-
+window.onload = 
 document.onkeypress = stopRKey;

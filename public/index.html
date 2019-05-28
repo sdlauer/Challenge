@@ -4,28 +4,31 @@
  *  Author     : Dr. Susan Lauer   sdlauer@gmail.com
  */
 -->
+
 <html>
     <head>
-        <title>Full Stack Web Programming Challenge -- Lauer</title>
+        <title >Full Stack Web Programming Challenge -- Lauer</title>
         <meta charset="UTF-8">
+        <!--<meta http-equiv="refresh" content="10" >--> 
         <link type="text/css" rel="stylesheet" href="main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body id = "whatever">
-        <form name = "factoryInput" action="factoryMaker.php" method="GET">
+    <body id = "whatever" >
+         
+         <form name = "factoryInput" action="factoryMaker.php" method="GET">
             Show factory of: <input type="number" name="id"  />
-            <input type="submit" value="GO" name ="<?php echo $str; ?> " />
+            <input type="submit" value="GO"  />
         </form>  
         <div class="stripe-5"  onclick="newFactory(5, -78910, 835910);"><span >&nbsp;&nbsp;Root</span></div>
         <table id = "root" style="width:100%" ></table>
 
-        <?php include 'tester.html';?>
+        <?php include('tester.php'); ?> 
 
-        <script src="challenge.js"></script>
-               <!--<script src="tester.js"></script>-->
-<!--        <script>
-            includeHTML();
-        </script>-->
+        <script src="challenge.js"> </script>
+        <!--<script src="tester.js"></script>-->
+        <!--        <script>
+                    includeHTML();
+                </script>-->        
     </body>
 </html>
