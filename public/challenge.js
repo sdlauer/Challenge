@@ -1,40 +1,46 @@
 /**
  *  Author     : Dr. Susan Lauer   sdlauer@gmail.com
  */
-
-
 function initialize(n, min, max) {
     var rn;
     var div = '';
-    var div2 = 'factory' + factname();
+    var div2 = factname();
     for (i = 1; i < n; i++) {
         rn = Math.random() * (max - min) + min;
         div += '<li><p> ' + rn.toFixed(0) + '</p></li>';
     }
+    document.getElementById("refresher").content += 5;
     div += '</br>';
-    document.getElementById("root").innerHTML += 
-
-            '<table><tr><th><li class="containerFactory"  id ="' + div2 + '" >&nbsp;' + div2 + '</th>' +
+    document.getElementById("root").innerHTML +=
+            '<table><tr><th><li class="containerFactory"  id ="factory' + div2 + ' " onclick="show_hide(\'fact' + div2 + '\')" >&nbsp;Factory ' + div2 + '</th>' +
             '<th id = "minmax" >' + min + '&nbsp; :&nbsp; ' + max + '</th>' +
             '<ul>' +
             div +
             '</ul>' +
-            '</p></li></tr></table>'+
-    '<object style="display: show;width:350px; height: 500px"  scrolling = "no" data="generator.html">no html</object>';
-    
-
+            '</p></li></tr></table>' +
+            '<object id="fact' + div2 + '" style="display: none; width:350px;' +
+            'height: 500px"  scrolling = "no" data="generator.html"></object>';
+}
+function show_hide(str) {
+    var x = document.getElementById(str);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+function cleaner(cln) {
+    document.getElementById(cln).value = "";
 }
 function generateFactory(n, min, max) {
     initialize(n, min, max);
 }
-
 function newFactory(n, min, max) {
     n = Math.random() * (16);
     initialize(n.toFixed(0), min, max);
 
 }
 function factname() {
-
     if (typeof factname.c === 'undefined') {
         factname.c = 0;
     }
@@ -73,8 +79,6 @@ function factname() {
 //        '</fieldset>';
 //      
 //        }
-        
-
 // keeps enter from submitting form
 function stopRKey(evt) {
     var evt = (evt) ? evt : ((event) ? event : null);
@@ -83,6 +87,5 @@ function stopRKey(evt) {
         return false;
     }
 }
-
-window.onload = 
+//window.onload = 
 document.onkeypress = stopRKey;
